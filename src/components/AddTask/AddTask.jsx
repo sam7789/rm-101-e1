@@ -21,7 +21,7 @@ const AddTask = () => {
     event.preventDefault();
     let newTask = true;
 
-    if (taskData.text == "") {
+    if (taskData.text === "") {
       return;
     }
     todo.forEach((task) => {
@@ -36,11 +36,20 @@ const AddTask = () => {
   }
 
   return (
-    <div className={styles.todoForm}>
+    <div
+      className={styles.todoForm}
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <input
         data-testid="add-task-input"
         type="text"
         name="text"
+        className="addtask"
         onChange={handleTask}
       />
       <button data-testid="add-task-button" onClick={handleSubmit}>
